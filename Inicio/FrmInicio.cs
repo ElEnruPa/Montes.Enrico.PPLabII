@@ -5,40 +5,40 @@ namespace Inicio
 {
     public partial class FrmInicio : Form
     {
-        private Due�o due�oGlobal = new Due�o();
+        private Dueño dueñoGlobal = new Dueño();
         private Usuario usuarioVentas = new Usuario();
 
         public FrmInicio()
         {
             InitializeComponent();
-            due�oGlobal.ListaDefault();
+            dueñoGlobal.ListaDefault();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             string email;
-            string contrase�a;
+            string contraseña;
 
             email = txtEmail.Text;
-            contrase�a = txtContrase�a.Text;
+            contraseña = txtContraseña.Text;
 
-            if(email == "1" && contrase�a == "1")
+            if(email == "Dueño" && contraseña == "Dueño")
             {
-                FrmMenuDue�o frmMenuDue�o = new FrmMenuDue�o(due�oGlobal, usuarioVentas);
-                frmMenuDue�o.ShowDialog();
+                FrmMenuDueño frmMenuDueño = new FrmMenuDueño(dueñoGlobal, usuarioVentas);
+                frmMenuDueño.ShowDialog();
                 //this.Close();
             }
             else
             {
-                if(email == "2" && contrase�a == "2")
+                if(email == "Vendedor" && contraseña == "Vendedor")
                 {
-                    FrmAdministradorDeVentas frmAdministradorDeVentas = new FrmAdministradorDeVentas(due�oGlobal, usuarioVentas);
+                    FrmAdministradorDeVentas frmAdministradorDeVentas = new FrmAdministradorDeVentas(dueñoGlobal, usuarioVentas);
                     frmAdministradorDeVentas.ShowDialog();
                     //this.Close();
                 }
                 else
                 {
-                    if(email == "3" && contrase�a == "3")
+                    if(email == "Cliente" && contraseña == "Cliente")
                     {
                         FrmContadorVentas frmContadorVentas = new FrmContadorVentas(usuarioVentas);
                         frmContadorVentas.ShowDialog();
@@ -46,9 +46,9 @@ namespace Inicio
                     }
                     else
                     {
-                        MessageBox.Show("Ingreso mal el Email o la Contrase�a, intentelo nuevamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ingreso mal el Email o la Contraseña, intentelo nuevamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtEmail.Clear();
-                        txtContrase�a.Clear();
+                        txtContraseña.Clear();
                     }
                 }
             }
