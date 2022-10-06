@@ -1,6 +1,6 @@
 ﻿namespace Inicio
 {
-    partial class Inicio
+    partial class FrmInicio
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,6 +33,8 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.lblUsuarios = new System.Windows.Forms.Label();
+            this.lblUsuario2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblEmail
@@ -55,7 +57,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(103, 183);
+            this.btnAceptar.Location = new System.Drawing.Point(119, 182);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 2;
@@ -67,27 +69,50 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(89, 74);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 23);
+            this.txtEmail.Size = new System.Drawing.Size(135, 23);
             this.txtEmail.TabIndex = 3;
             // 
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(89, 137);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(100, 23);
+            this.txtContraseña.PasswordChar = '*';
+            this.txtContraseña.Size = new System.Drawing.Size(135, 23);
             this.txtContraseña.TabIndex = 4;
             // 
-            // Inicio
+            // lblUsuarios
+            // 
+            this.lblUsuarios.AutoSize = true;
+            this.lblUsuarios.Location = new System.Drawing.Point(21, 226);
+            this.lblUsuarios.Name = "lblUsuarios";
+            this.lblUsuarios.Size = new System.Drawing.Size(165, 15);
+            this.lblUsuarios.TabIndex = 5;
+            this.lblUsuarios.Text = "Email: Dueño - Contra: Dueño";
+            // 
+            // lblUsuario2
+            // 
+            this.lblUsuario2.AutoSize = true;
+            this.lblUsuario2.Location = new System.Drawing.Point(21, 241);
+            this.lblUsuario2.Name = "lblUsuario2";
+            this.lblUsuario2.Size = new System.Drawing.Size(195, 15);
+            this.lblUsuario2.TabIndex = 6;
+            this.lblUsuario2.Text = "Email: Vendedor - Contra: Vendedor";
+            // 
+            // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(314, 272);
+            this.Controls.Add(this.lblUsuario2);
+            this.Controls.Add(this.lblUsuarios);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblEmail);
-            this.Name = "Inicio";
+            this.Name = "FrmInicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -101,5 +126,7 @@
         private Button btnAceptar;
         private TextBox txtEmail;
         private TextBox txtContraseña;
+        private Label lblUsuarios;
+        private Label lblUsuario2;
     }
 }
