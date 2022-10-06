@@ -16,12 +16,14 @@ namespace Forms
     {
         private Dueño dueñoLocal = new Dueño();
         private Usuario usuarioLocal = new Usuario();
+        private Usuario usuarioVentas = new Usuario();
 
-        public FrmAdministradorDeVentas(Dueño dueñoGlobal)
+        public FrmAdministradorDeVentas(Dueño dueñoGlobal, Usuario usuarioVentas)
         {
             InitializeComponent();
             this.dueñoLocal = dueñoGlobal;
             this.usuarioLocal = dueñoGlobal;
+            this.usuarioVentas = usuarioVentas;
             dgvInventario.DataSource = null; 
             dgvInventario.DataSource = this.dueñoLocal.listaProductos; 
         }
@@ -32,6 +34,7 @@ namespace Forms
             if(MessageBox.Show("¿Estas seguro que quiere realizar esta venta?", "VENTA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 Producto p1 = new Producto();
+                Producto pVenta = new Producto();
 
                 int dineroCliente = (int)numUD_DineroCliente.Value;
                 string nombre = txtProducto.Text;
@@ -41,7 +44,12 @@ namespace Forms
 
                 p1 = usuarioLocal.EncontrarProducto(nombre, tag);
 
-                if(String.IsNullOrEmpty(p1.Tag) || String.IsNullOrEmpty(p1.Nombre))
+                pVenta.Tag = tag;
+                pVenta.Nombre = nombre;
+                pVenta.Stock = cantidad;
+                pVenta.Precio = p1.Precio;
+
+                if (String.IsNullOrEmpty(p1.Tag) || String.IsNullOrEmpty(p1.Nombre))
                 {
                     MessageBox.Show("El Tag y/o el nombre del producto son incorrectos.", "DATOS INCORRECTOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -79,6 +87,7 @@ namespace Forms
                                 cantidadDisminuida = usuarioLocal.Vender(nombre, tag, cantidad);
                                 dgvInventario.DataSource = null;
                                 dgvInventario.DataSource = this.usuarioLocal.listaProductos;
+                                usuarioVentas.listaProductos.Add(pVenta);
                                 GenerarTicket(precio, vuelto, cantidad);
                                 LimpiarControles();
                             }
@@ -150,7 +159,7 @@ namespace Forms
 
         private void btnMostrarVentas_Click(object sender, EventArgs e)
         {
-            FrmMostradorVentas frmMostradorVentas = new FrmMostradorVentas(dueñoLocal);
+            FrmMostradorVentas frmMostradorVentas = new FrmMostradorVentas(usuarioVentas);
             frmMostradorVentas.ShowDialog();
             //this.Close();
         }

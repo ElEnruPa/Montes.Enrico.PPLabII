@@ -13,12 +13,14 @@ namespace Forms
 {
     public partial class FrmMostradorVentas : Form
     {
-        private Dueño dueñoLocal = new Dueño();
+        private Usuario usuarioVentas = new Usuario();
 
-        public FrmMostradorVentas(Dueño dueñoGlobal)
+        public FrmMostradorVentas(Usuario usuarioVentas)
         {
             InitializeComponent();
-            dueñoLocal = dueñoGlobal;
+            this.usuarioVentas = usuarioVentas;
+            dgvMostradorVentas.DataSource = null;
+            dgvMostradorVentas.DataSource = this.usuarioVentas.listaProductos;
         }
     }
 }

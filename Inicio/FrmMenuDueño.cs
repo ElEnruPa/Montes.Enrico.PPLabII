@@ -14,11 +14,13 @@ namespace Forms
     public partial class FrmMenuDueño : Form
     {
         private Dueño dueñoLocal = new Dueño();
+        private Usuario usuarioVentas = new Usuario();
 
-        public FrmMenuDueño(Dueño dueñoGlobal)
+        public FrmMenuDueño(Dueño dueñoGlobal, Usuario usuarioVentas)
         {
             InitializeComponent();
             this.dueñoLocal = dueñoGlobal;
+            this.usuarioVentas = usuarioVentas;
         }
 
         private void btnAI_Click(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace Forms
 
         private void btnAV_Click(object sender, EventArgs e)
         {
-            FrmAdministradorDeVentas frmAdministradorDeVentas = new FrmAdministradorDeVentas(dueñoLocal);
+            FrmAdministradorDeVentas frmAdministradorDeVentas = new FrmAdministradorDeVentas(dueñoLocal, usuarioVentas);
             frmAdministradorDeVentas.ShowDialog();
             //this.Close();
         }

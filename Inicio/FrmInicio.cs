@@ -6,6 +6,7 @@ namespace Inicio
     public partial class FrmInicio : Form
     {
         private Dueño dueñoGlobal = new Dueño();
+        private Usuario usuarioVentas = new Usuario();
 
         public FrmInicio()
         {
@@ -23,7 +24,7 @@ namespace Inicio
 
             if(email == "1" && contraseña == "1")
             {
-                FrmMenuDueño frmMenuDueño = new FrmMenuDueño(dueñoGlobal);
+                FrmMenuDueño frmMenuDueño = new FrmMenuDueño(dueñoGlobal, usuarioVentas);
                 frmMenuDueño.ShowDialog();
                 //this.Close();
             }
@@ -31,15 +32,24 @@ namespace Inicio
             {
                 if(email == "2" && contraseña == "2")
                 {
-                    FrmAdministradorDeVentas frmAdministradorDeVentas = new FrmAdministradorDeVentas(dueñoGlobal);
+                    FrmAdministradorDeVentas frmAdministradorDeVentas = new FrmAdministradorDeVentas(dueñoGlobal, usuarioVentas);
                     frmAdministradorDeVentas.ShowDialog();
                     //this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Ingreso mal el Email o la Contraseña, intentelo nuevamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtEmail.Clear();
-                    txtContraseña.Clear();
+                    if(email == "3" && contraseña == "3")
+                    {
+                        FrmContadorVentas frmContadorVentas = new FrmContadorVentas(usuarioVentas);
+                        frmContadorVentas.ShowDialog();
+                        //this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingreso mal el Email o la Contraseña, intentelo nuevamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Clear();
+                        txtContraseña.Clear();
+                    }
                 }
             }
         }
