@@ -14,16 +14,15 @@ namespace Clases
 
         public Usuario()
         {
+            this.email = "";
+            this.contraseña = "";
+            this.listaProductos = new List<Producto>();
         }
 
-        public Usuario(string email, string contraseña) : this()
+        public Usuario(string email, string contraseña, List<Producto> listaProductos) : this()
         {
             this.email = email;
             this.contraseña = contraseña;
-        }
-
-        public Usuario(string email, string contraseña, List<Producto> listaProductos) : this(email, contraseña)
-        {
             this.listaProductos = listaProductos;
         }
 

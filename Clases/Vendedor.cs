@@ -44,14 +44,15 @@ namespace Clases
                 if (p.Tag == tag && p.Nombre == nombre)
                 {
                     stockDisminuido = p.DisminucionStock(cantidad);
-                    p1 = EliminarProductos();
+                    p1 = ProductoSinStock();
                 }
             }
+            ListaProductos.Remove(p1);
 
             return stockDisminuido;
         }
 
-        private Producto EliminarProductos()
+        private Producto ProductoSinStock()
         {
             Producto p1 = new Producto();
 

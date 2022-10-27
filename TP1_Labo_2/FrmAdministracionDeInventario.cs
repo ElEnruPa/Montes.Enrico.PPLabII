@@ -51,9 +51,14 @@ namespace TP1_Labo_2
 
                 dgvInventario.DataSource = null; //Limpio la lista q tenia antes
                 dgvInventario.DataSource = listaProductosVacia; //Agrego la lista nuevamente
-                cbxTag.SelectedIndex = -1;
-                txtProducto.Clear();
+                LimpiarControles();
             }
+        }
+
+        private void LimpiarControles()
+        {
+            cbxTag.SelectedIndex = -1;
+            txtProducto.Clear();
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)

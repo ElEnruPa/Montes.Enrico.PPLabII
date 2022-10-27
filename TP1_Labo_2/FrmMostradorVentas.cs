@@ -52,6 +52,8 @@ namespace TP1_Labo_2
                     }
                 }
             }
+
+            LimpiarControles();
         }
 
         private string SBProductoMasVendidoPorTag()
@@ -143,6 +145,13 @@ namespace TP1_Labo_2
                 ganancias += (p.Precio * p.Stock);
             }
             return ganancias;
+        }
+
+        private void LimpiarControles()
+        {
+            this.rbdProductoMasVendidoPorTag.Checked = false;
+            this.rbdPromedioGanancia.Checked = false;
+            this.rbdGananciaTotal.Checked = false;
         }
     }
 }

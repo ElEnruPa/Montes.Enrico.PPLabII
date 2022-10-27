@@ -38,5 +38,16 @@ namespace Clases
         {
             listaProductos.Add(p1);
         }
+
+        public void AgregarStock(Producto p1)
+        {
+            foreach (Producto p2 in ListaProductos)
+            {
+                if (p2 == p1)
+                {
+                    p2.Stock += p1.Stock;
+                }
+            }
+        }
     }
 }

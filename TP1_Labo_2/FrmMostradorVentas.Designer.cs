@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMostradorVentas));
             this.gbxVer = new System.Windows.Forms.GroupBox();
             this.rbdGananciaTotal = new System.Windows.Forms.RadioButton();
             this.rbdPromedioGanancia = new System.Windows.Forms.RadioButton();
@@ -41,6 +42,7 @@
             // 
             // gbxVer
             // 
+            this.gbxVer.BackColor = System.Drawing.SystemColors.Control;
             this.gbxVer.Controls.Add(this.rbdGananciaTotal);
             this.gbxVer.Controls.Add(this.rbdPromedioGanancia);
             this.gbxVer.Controls.Add(this.rbdProductoMasVendidoPorTag);
@@ -121,11 +123,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(943, 364);
             this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.gbxVer);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblVentas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMostradorVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mostrador de Ventas";

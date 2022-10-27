@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAñadirProducto));
             this.lblTag = new System.Windows.Forms.Label();
             this.cbxTag = new System.Windows.Forms.ComboBox();
             this.txtProducto = new System.Windows.Forms.TextBox();
@@ -164,6 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(907, 362);
             this.Controls.Add(this.lblInventario);
             this.Controls.Add(this.lblStock);
@@ -176,6 +178,7 @@
             this.Controls.Add(this.txtProducto);
             this.Controls.Add(this.cbxTag);
             this.Controls.Add(this.lblTag);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAñadirProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Añadir Producto";

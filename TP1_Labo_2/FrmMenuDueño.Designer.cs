@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuDueño));
             this.lblDueño = new System.Windows.Forms.Label();
             this.btnAdministradorInventario = new System.Windows.Forms.Button();
             this.btnAdministracionVenta = new System.Windows.Forms.Button();
@@ -67,10 +68,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(513, 293);
             this.Controls.Add(this.btnAdministracionVenta);
             this.Controls.Add(this.btnAdministradorInventario);
             this.Controls.Add(this.lblDueño);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMenuDueño";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Dueño";
