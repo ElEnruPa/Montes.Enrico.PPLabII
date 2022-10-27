@@ -4,7 +4,6 @@ E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\bin\Debug\net6.0-windows\TP1_Labo_2.runtimec
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\bin\Debug\net6.0-windows\TP1_Labo_2.dll
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\bin\Debug\net6.0-windows\TP1_Labo_2.pdb
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.csproj.AssemblyReference.cache
-E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.Inicio.resources
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.csproj.GenerateResource.cache
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.GeneratedMSBuildEditorConfig.editorconfig
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.AssemblyInfoInputs.cache
@@ -15,3 +14,12 @@ E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\refint\TP1_Labo_2.d
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.pdb
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.genruntimeconfig.cache
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\ref\TP1_Labo_2.dll
+E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.FrmInicio.resources
+E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.FrmMenuDueño.resources
+E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.FrmAdministracionDeInventario.resources
+E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.FrmAdministracionDeVentas.resources
+E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.FrmAñadirProducto.resources
+E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.FrmMostradorVentas.resources
+E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\bin\Debug\net6.0-windows\Clases.dll
+E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\bin\Debug\net6.0-windows\Clases.pdb
+E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.csproj.CopyComplete

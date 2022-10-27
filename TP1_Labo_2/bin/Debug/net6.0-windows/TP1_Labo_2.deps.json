@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "TP1_Labo_2/1.0.0": {
+        "dependencies": {
+          "Clases": "1.0.0"
+        },
         "runtime": {
           "TP1_Labo_2.dll": {}
+        }
+      },
+      "Clases/1.0.0": {
+        "runtime": {
+          "Clases.dll": {}
         }
       }
     }
   },
   "libraries": {
     "TP1_Labo_2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Clases/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

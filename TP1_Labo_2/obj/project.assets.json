@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "Clases/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Clases.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Clases.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Clases/1.0.0": {
+      "type": "project",
+      "path": "../Clases/Clases.csproj",
+      "msbuildProject": "../Clases/Clases.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "Clases >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Enru\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Users\\Enru\\TP1_Labo_2\\Clases\\Clases.csproj": {
+              "projectPath": "E:\\Users\\Enru\\TP1_Labo_2\\Clases\\Clases.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -64,7 +87,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
