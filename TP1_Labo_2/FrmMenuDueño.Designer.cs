@@ -32,13 +32,14 @@
             this.lblDueño = new System.Windows.Forms.Label();
             this.btnAdministradorInventario = new System.Windows.Forms.Button();
             this.btnAdministracionVenta = new System.Windows.Forms.Button();
+            this.btnComprarProductos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDueño
             // 
             this.lblDueño.AutoSize = true;
             this.lblDueño.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.lblDueño.Location = new System.Drawing.Point(120, 70);
+            this.lblDueño.Location = new System.Drawing.Point(217, 70);
             this.lblDueño.Name = "lblDueño";
             this.lblDueño.Size = new System.Drawing.Size(261, 30);
             this.lblDueño.TabIndex = 0;
@@ -64,12 +65,23 @@
             this.btnAdministracionVenta.UseVisualStyleBackColor = true;
             this.btnAdministracionVenta.Click += new System.EventHandler(this.btnAdministracionVenta_Click);
             // 
+            // btnComprarProductos
+            // 
+            this.btnComprarProductos.Location = new System.Drawing.Point(476, 145);
+            this.btnComprarProductos.Name = "btnComprarProductos";
+            this.btnComprarProductos.Size = new System.Drawing.Size(126, 65);
+            this.btnComprarProductos.TabIndex = 3;
+            this.btnComprarProductos.Text = "Comprar Productos a Proveedores";
+            this.btnComprarProductos.UseVisualStyleBackColor = true;
+            this.btnComprarProductos.Click += new System.EventHandler(this.btnComprarProductos_Click);
+            // 
             // FrmMenuDueño
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(513, 293);
+            this.ClientSize = new System.Drawing.Size(676, 274);
+            this.Controls.Add(this.btnComprarProductos);
             this.Controls.Add(this.btnAdministracionVenta);
             this.Controls.Add(this.btnAdministradorInventario);
             this.Controls.Add(this.lblDueño);
@@ -87,5 +99,6 @@
         private Label lblDueño;
         private Button btnAdministradorInventario;
         private Button btnAdministracionVenta;
+        private Button btnComprarProductos;
     }
 }

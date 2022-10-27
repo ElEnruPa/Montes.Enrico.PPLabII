@@ -36,5 +36,11 @@ namespace TP1_Labo_2
             FrmAdministracionDeVentas frmAdministracionDeVenta = new FrmAdministracionDeVentas(vendedorForm, clienteForm);
             frmAdministracionDeVenta.ShowDialog();
         }
+
+        private void btnComprarProductos_Click(object sender, EventArgs e)
+        {
+            FrmCatalogoProveedor frmCatalogoProveedor = new FrmCatalogoProveedor(dueñoForm);
+            frmCatalogoProveedor.ShowDialog();
+        }
     }
 }

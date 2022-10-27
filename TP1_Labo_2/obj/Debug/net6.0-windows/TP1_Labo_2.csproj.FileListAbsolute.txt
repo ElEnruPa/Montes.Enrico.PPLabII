@@ -23,3 +23,4 @@ E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.FrmMostr
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\bin\Debug\net6.0-windows\Clases.dll
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\bin\Debug\net6.0-windows\Clases.pdb
 E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.csproj.CopyComplete
+E:\Users\Enru\TP1_Labo_2\TP1_Labo_2\obj\Debug\net6.0-windows\TP1_Labo_2.FrmCatalogoProveedor.resources
