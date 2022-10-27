@@ -30,7 +30,7 @@
         {
             this.gbxVer = new System.Windows.Forms.GroupBox();
             this.rbdGananciaTotal = new System.Windows.Forms.RadioButton();
-            this.rbdPromedioGanancias = new System.Windows.Forms.RadioButton();
+            this.rbdPromedioGanancia = new System.Windows.Forms.RadioButton();
             this.rbdProductoMasVendidoPorTag = new System.Windows.Forms.RadioButton();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblVentas = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             // gbxVer
             // 
             this.gbxVer.Controls.Add(this.rbdGananciaTotal);
-            this.gbxVer.Controls.Add(this.rbdPromedioGanancias);
+            this.gbxVer.Controls.Add(this.rbdPromedioGanancia);
             this.gbxVer.Controls.Add(this.rbdProductoMasVendidoPorTag);
             this.gbxVer.Location = new System.Drawing.Point(31, 75);
             this.gbxVer.Name = "gbxVer";
@@ -62,16 +62,16 @@
             this.rbdGananciaTotal.Text = "Ganancia Total";
             this.rbdGananciaTotal.UseVisualStyleBackColor = true;
             // 
-            // rbdPromedioGanancias
+            // rbdPromedioGanancia
             // 
-            this.rbdPromedioGanancias.AutoSize = true;
-            this.rbdPromedioGanancias.Location = new System.Drawing.Point(30, 93);
-            this.rbdPromedioGanancias.Name = "rbdPromedioGanancias";
-            this.rbdPromedioGanancias.Size = new System.Drawing.Size(192, 19);
-            this.rbdPromedioGanancias.TabIndex = 1;
-            this.rbdPromedioGanancias.TabStop = true;
-            this.rbdPromedioGanancias.Text = "Promedio de Ganancias Por Tag";
-            this.rbdPromedioGanancias.UseVisualStyleBackColor = true;
+            this.rbdPromedioGanancia.AutoSize = true;
+            this.rbdPromedioGanancia.Location = new System.Drawing.Point(30, 93);
+            this.rbdPromedioGanancia.Name = "rbdPromedioGanancia";
+            this.rbdPromedioGanancia.Size = new System.Drawing.Size(192, 19);
+            this.rbdPromedioGanancia.TabIndex = 1;
+            this.rbdPromedioGanancia.TabStop = true;
+            this.rbdPromedioGanancia.Text = "Promedio de Ganancias Por Tag";
+            this.rbdPromedioGanancia.UseVisualStyleBackColor = true;
             // 
             // rbdProductoMasVendidoPorTag
             // 
@@ -111,6 +111,7 @@
             this.dgvInventario.Location = new System.Drawing.Point(319, 75);
             this.dgvInventario.MultiSelect = false;
             this.dgvInventario.Name = "dgvInventario";
+            this.dgvInventario.ReadOnly = true;
             this.dgvInventario.RowTemplate.Height = 25;
             this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInventario.Size = new System.Drawing.Size(596, 256);
@@ -140,7 +141,7 @@
 
         private GroupBox gbxVer;
         private RadioButton rbdGananciaTotal;
-        private RadioButton rbdPromedioGanancias;
+        private RadioButton rbdPromedioGanancia;
         private RadioButton rbdProductoMasVendidoPorTag;
         private Button btnAceptar;
         private Label lblVentas;

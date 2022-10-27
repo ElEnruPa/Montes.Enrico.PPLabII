@@ -58,6 +58,7 @@
             this.dgvInventario.Location = new System.Drawing.Point(316, 60);
             this.dgvInventario.MultiSelect = false;
             this.dgvInventario.Name = "dgvInventario";
+            this.dgvInventario.ReadOnly = true;
             this.dgvInventario.RowTemplate.Height = 25;
             this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInventario.Size = new System.Drawing.Size(596, 256);

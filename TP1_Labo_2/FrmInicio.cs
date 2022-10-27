@@ -7,15 +7,19 @@ namespace TP1_Labo_2
     {
         private Dueño dueñoForm = new Dueño();
         private Vendedor vendedorForm = new Vendedor();
+        private Cliente clienteForm = new Cliente();
 
         public FrmInicio()
         {
             InitializeComponent();
             List<Producto> listaProductos = ListaDefault();
+            List<Producto> listaVentas = new List<Producto>();
             Dueño dueño = new Dueño("dueño@gmail.com", "Dueño123", listaProductos);
             Vendedor vendedor = new Vendedor("vendedor@gmail.com", "Vendedor123", listaProductos);
+            Cliente cliente = new Cliente("cliente@gmail.com", "Cliente123", listaVentas);
             this.dueñoForm = dueño;
             this.vendedorForm = vendedor;
+            this.clienteForm = cliente;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -28,7 +32,7 @@ namespace TP1_Labo_2
 
             if (email == dueñoForm.Email && contraseña == dueñoForm.Contraseña)
             {
-                FrmMenuDueño frmMenuDueño = new FrmMenuDueño(dueñoForm, vendedorForm);
+                FrmMenuDueño frmMenuDueño = new FrmMenuDueño(dueñoForm, vendedorForm, clienteForm);
                 frmMenuDueño.ShowDialog();
                 //this.Close();
             }
@@ -36,15 +40,15 @@ namespace TP1_Labo_2
             {
                 if (email == vendedorForm.Email && contraseña == vendedorForm.Contraseña)
                 {
-                    FrmAdministracionDeVentas frmAdministracionDeVentas = new FrmAdministracionDeVentas(vendedorForm);
+                    FrmAdministracionDeVentas frmAdministracionDeVentas = new FrmAdministracionDeVentas(vendedorForm, clienteForm);
                     frmAdministracionDeVentas.ShowDialog();
                     //this.Close();
                 }
                 else
                 {
-                    if (email == "3" && contraseña == "3")
+                    if (email == clienteForm.Email && contraseña == clienteForm.Contraseña)
                     {
-                        FrmMostradorVentas frmMostradorVentas = new FrmMostradorVentas(vendedorForm);
+                        FrmMostradorVentas frmMostradorVentas = new FrmMostradorVentas(clienteForm);
                         frmMostradorVentas.ShowDialog();
                         //this.Close();
                     }
@@ -72,8 +76,8 @@ namespace TP1_Labo_2
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            FrmMostradorVentas frmMostradorVentas = new FrmMostradorVentas(vendedorForm);
-            frmMostradorVentas.ShowDialog();
+            txtEmail.Text = "cliente@gmail.com";
+            txtContraseña.Text = "Cliente123";
         }
 
         private List<Producto> ListaDefault()

@@ -34,19 +34,36 @@ namespace Clases
             set { this.listaProductos = value; }
         }
 
-        public override int Vender(string nombre, string tag, int cantidad)
+        public int Vender(string nombre, string tag, int cantidad)
         {
             int stockDisminuido = -1;
+            Producto p1 = new Producto();
 
-            foreach (Producto p in this.listaProductos)
+            foreach (Producto p in ListaProductos)
             {
                 if (p.Tag == tag && p.Nombre == nombre)
                 {
                     stockDisminuido = p.DisminucionStock(cantidad);
+                    p1 = EliminarProductos();
                 }
             }
 
             return stockDisminuido;
+        }
+
+        private Producto EliminarProductos()
+        {
+            Producto p1 = new Producto();
+
+            foreach (Producto p in ListaProductos)
+            {
+                if (p.Stock <= 0)
+                {
+                    p1 = p;
+                }
+            }
+
+            return p1;
         }
     }
 }

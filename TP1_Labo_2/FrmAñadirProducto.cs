@@ -46,8 +46,8 @@ namespace TP1_Labo_2
                 {
                     if (ProductosIguales(p1))
                     {
-                        MessageBox.Show("El producto ya existe, se le añadio el stock indicado.", "PRODUCTOS EXISTENTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         AgregarStock(p1);
+                        MessageBox.Show("El producto ya existe, se le añadio el stock indicado.", "PRODUCTOS EXISTENTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         dgvInventario.DataSource = null; //Limpio la lista q tenia antes
                         dgvInventario.DataSource = dueñoForm.ListaProductos; //Agrego la lista nuevamente
@@ -84,7 +84,7 @@ namespace TP1_Labo_2
             return retorno;
         }
 
-        public void AgregarStock(Producto p1)
+        private void AgregarStock(Producto p1)
         {
             foreach (Producto p2 in this.dueñoForm.ListaProductos)
             {

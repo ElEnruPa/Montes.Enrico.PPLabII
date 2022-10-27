@@ -15,12 +15,14 @@ namespace TP1_Labo_2
     {
         private Dueño dueñoForm = new Dueño();
         private Vendedor vendedorForm = new Vendedor();
+        private Cliente clienteForm = new Cliente();
 
-        public FrmMenuDueño(Dueño dueño, Vendedor vendedor)
+        public FrmMenuDueño(Dueño dueño, Vendedor vendedor, Cliente clienteForm)
         {
             InitializeComponent();
             this.dueñoForm = dueño;
             this.vendedorForm = vendedor;
+            this.clienteForm = clienteForm;
         }
 
         private void btnAdministradorInventario_Click(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace TP1_Labo_2
 
         private void btnAdministracionVenta_Click(object sender, EventArgs e)
         {
-            FrmAdministracionDeVentas frmAdministracionDeVenta = new FrmAdministracionDeVentas(vendedorForm);
+            FrmAdministracionDeVentas frmAdministracionDeVenta = new FrmAdministracionDeVentas(vendedorForm, clienteForm);
             frmAdministracionDeVenta.ShowDialog();
         }
     }

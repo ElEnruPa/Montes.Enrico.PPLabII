@@ -45,7 +45,5 @@ namespace Clases
             set;
         }
 
-        public abstract int Vender(string nombre, string tag, int cantidad);
-
     }
 }

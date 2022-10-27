@@ -14,11 +14,13 @@ namespace TP1_Labo_2
     public partial class FrmAdministracionDeVentas : Form
     {
         private Vendedor vendedorForm = new Vendedor();
+        private Cliente clienteForm = new Cliente();
 
-        public FrmAdministracionDeVentas(Vendedor vendedor)
+        public FrmAdministracionDeVentas(Vendedor vendedor, Cliente cliente)
         {
             InitializeComponent();
             this.vendedorForm = vendedor;
+            this.clienteForm = cliente;
             dgvInventario.DataSource = null; //Limpio la lista q tenia antes
             dgvInventario.DataSource = this.vendedorForm.ListaProductos; //Agrego la lista nuevamente
         }
@@ -66,6 +68,8 @@ namespace TP1_Labo_2
             bool credito = rbdCredito.Checked;
             bool efectivo = rbdEfectivo.Checked;
 
+            Producto pVenta = new Producto(tag, nombre, precio, cantidadCompra);
+
             if (cantidadCompra > stock || cantidadCompra <= 0)
             {
                 MessageBox.Show("El stock que el cliente quiere no esta disponible.", "STOCK INSUFICIENTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -100,6 +104,7 @@ namespace TP1_Labo_2
 
                         dgvInventario.DataSource = null;
                         dgvInventario.DataSource = this.vendedorForm.ListaProductos;
+                        clienteForm.ListaProductos.Add(pVenta);
 
                         string ticket = GenerarTicket(precioFinal, vuelto);
                         MessageBox.Show(ticket, "TICKET", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -173,7 +178,7 @@ namespace TP1_Labo_2
 
         private void btnVentasHechas_Click(object sender, EventArgs e)
         {
-            FrmMostradorVentas frmMostradorVentas = new FrmMostradorVentas(vendedorForm);
+            FrmMostradorVentas frmMostradorVentas = new FrmMostradorVentas(clienteForm);
             frmMostradorVentas.ShowDialog();
         }
     }

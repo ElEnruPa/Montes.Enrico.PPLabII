@@ -25,7 +25,11 @@
             tags.Add("Otros");
         }
 
-        public Producto(string tag, string nombre, int precio, int stock)
+        public Producto ()
+        { 
+        }
+
+        public Producto(string tag, string nombre, int precio, int stock) : this ()
         {
             this.tag = tag;
             this.nombre = nombre;
