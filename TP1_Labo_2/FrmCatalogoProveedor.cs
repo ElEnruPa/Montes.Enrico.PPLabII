@@ -14,16 +14,12 @@ namespace TP1_Labo_2
     public partial class FrmCatalogoProveedor : Form
     {
         private Dueño dueñoForm;
-        private Proveedor p1;
-        private Proveedor p2;
         private List<Proveedor> listaProveedoresForm;
 
         public FrmCatalogoProveedor(Dueño dueño, List<Proveedor> listaProveedores)
         {
             InitializeComponent();
             dueñoForm = dueño;
-            this.p1 = listaProveedores[0];
-            this.p2 = listaProveedores[1];
             this.listaProveedoresForm = listaProveedores;
             dgvProveedores.DataSource = null; //Limpio la lista q tenia antes
             dgvProveedores.DataSource = this.listaProveedoresForm; //Agrego la lista nuevamente
