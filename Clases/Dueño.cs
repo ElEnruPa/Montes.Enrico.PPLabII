@@ -8,9 +8,6 @@ namespace Clases
 {
     public class Dueño : Usuario
     {
-        public Dueño() : base()
-        {
-        }
 
         public Dueño(string email, string contraseña, List<Producto> listaProductos) : base(email, contraseña, listaProductos)
         {

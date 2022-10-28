@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button btnContador;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -36,7 +37,7 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnDueño = new System.Windows.Forms.Button();
             this.btnVendedor = new System.Windows.Forms.Button();
-            this.btnCliente = new System.Windows.Forms.Button();
+            btnContador = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEmail
@@ -102,22 +103,22 @@
             this.btnVendedor.UseVisualStyleBackColor = true;
             this.btnVendedor.Click += new System.EventHandler(this.btnVendedor_Click);
             // 
-            // btnCliente
+            // btnContador
             // 
-            this.btnCliente.Location = new System.Drawing.Point(259, 161);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(75, 23);
-            this.btnCliente.TabIndex = 7;
-            this.btnCliente.Text = "Cliente";
-            this.btnCliente.UseVisualStyleBackColor = true;
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            btnContador.Location = new System.Drawing.Point(259, 161);
+            btnContador.Name = "btnContador";
+            btnContador.Size = new System.Drawing.Size(75, 23);
+            btnContador.TabIndex = 7;
+            btnContador.Text = "Contador";
+            btnContador.UseVisualStyleBackColor = true;
+            btnContador.Click += new System.EventHandler(this.btnContador_Click);
             // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(423, 266);
-            this.Controls.Add(this.btnCliente);
+            this.Controls.Add(btnContador);
             this.Controls.Add(this.btnVendedor);
             this.Controls.Add(this.btnDueño);
             this.Controls.Add(this.txtContraseña);
@@ -143,6 +144,6 @@
         private TextBox txtContraseña;
         private Button btnDueño;
         private Button btnVendedor;
-        private Button btnCliente;
+        private Button btnContador;
     }
 }

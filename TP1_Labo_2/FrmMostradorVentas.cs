@@ -13,14 +13,14 @@ namespace TP1_Labo_2
 {
     public partial class FrmMostradorVentas : Form
     {
-        private Cliente clienteForm = new Cliente();
+        private Contador contadorForm;
 
-        public FrmMostradorVentas(Cliente cliente)
+        public FrmMostradorVentas(Contador contador)
         {
             InitializeComponent();
-            this.clienteForm = cliente;
+            this.contadorForm = contador;
             dgvInventario.DataSource = null;
-            dgvInventario.DataSource = this.clienteForm.ListaProductos;
+            dgvInventario.DataSource = this.contadorForm.ListaProductos;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace TP1_Labo_2
             int vendidos = 0;
             bool flag = false;
 
-            foreach (Producto p1 in clienteForm.ListaProductos)
+            foreach (Producto p1 in contadorForm.ListaProductos)
             {
                 if (p1.Tag == tag)
                 {
@@ -119,7 +119,7 @@ namespace TP1_Labo_2
             float promedio = 0;
             int cantidad = 0;
 
-            foreach (Producto p1 in clienteForm.ListaProductos)
+            foreach (Producto p1 in contadorForm.ListaProductos)
             {
                 if (p1.Tag == tag)
                 {
@@ -140,7 +140,7 @@ namespace TP1_Labo_2
         {
             int ganancias = 0;
 
-            foreach (Producto p in clienteForm.ListaProductos)
+            foreach (Producto p in contadorForm.ListaProductos)
             {
                 ganancias += (p.Precio * p.Stock);
             }

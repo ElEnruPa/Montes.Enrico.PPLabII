@@ -13,7 +13,7 @@ namespace TP1_Labo_2
 {
     public partial class FrmAñadirProducto : Form
     {
-        private Dueño dueñoForm = new Dueño();
+        private Dueño dueñoForm;
 
         public FrmAñadirProducto(Dueño dueño)
         {

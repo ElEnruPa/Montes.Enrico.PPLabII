@@ -13,26 +13,20 @@ namespace TP1_Labo_2
 {
     public partial class FrmCatalogoProveedor : Form
     {
-        private bool flag = false;
-        private Dueño dueñoForm = new Dueño();
-        private Proveedor p1 = new Proveedor();
-        private Proveedor p2 = new Proveedor();
-        private List<Proveedor> listaProveedores = new List<Proveedor>();
+        private Dueño dueñoForm;
+        private Proveedor p1;
+        private Proveedor p2;
+        private List<Proveedor> listaProveedoresForm;
 
-        public FrmCatalogoProveedor(Dueño dueño)
+        public FrmCatalogoProveedor(Dueño dueño, List<Proveedor> listaProveedores)
         {
             InitializeComponent();
             dueñoForm = dueño;
-            Proveedor p11 = new Proveedor("Enrico Inc.", 12345, Listap1());
-            Proveedor p22 = new Proveedor("Carlos Inc.", 67890, Listap2());
-            p1 = p11;
-            p2 = p22;
-            List<Proveedor> listaProveedoresNueva = new List<Proveedor>();
-            listaProveedores = listaProveedoresNueva;
-            listaProveedores.Add(p1);
-            listaProveedores.Add(p2);
+            this.p1 = listaProveedores[0];
+            this.p2 = listaProveedores[1];
+            this.listaProveedoresForm = listaProveedores;
             dgvProveedores.DataSource = null; //Limpio la lista q tenia antes
-            dgvProveedores.DataSource = this.listaProveedores; //Agrego la lista nuevamente
+            dgvProveedores.DataSource = this.listaProveedoresForm; //Agrego la lista nuevamente
         }
 
         private void btnVerCatalogo_Click(object sender, EventArgs e)
@@ -40,21 +34,10 @@ namespace TP1_Labo_2
             string nombre = dgvProveedores.SelectedRows[0].Cells[0].Value.ToString();
             int cuil = Convert.ToInt32(dgvProveedores.SelectedRows[0].Cells[1].Value);
 
-            if(nombre == "Enrico Inc." && cuil == 12345)
-            {
-                dgvInventario.DataSource = null; //Limpio la lista q tenia antes
-                dgvInventario.DataSource = this.p1.ListaProductos; //Agrego la lista nuevamente
-                flag = false;
-            }
-            else
-            {
-                if(nombre == "Carlos Inc." && cuil == 67890)
-                {
-                    dgvInventario.DataSource = null; //Limpio la lista q tenia antes
-                    dgvInventario.DataSource = this.p2.ListaProductos; //Agrego la lista nuevamente
-                    flag = true;
-                }
-            }
+            Proveedor p = EncontrarProveedor(nombre, cuil);
+
+            dgvInventario.DataSource = null; //Limpio la lista q tenia antes
+            dgvInventario.DataSource = p.ListaProductos; //Agrego la lista nuevamente
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
@@ -66,7 +49,6 @@ namespace TP1_Labo_2
             int cantidadCompra = (int)numUD_Cantidad.Value;
 
             Producto producto = new Producto(tag, nombre, precio, cantidadCompra);
-            Proveedor proveedor = new Proveedor();
 
             if (cantidadCompra > stock || cantidadCompra <= 0)
             {
@@ -74,7 +56,7 @@ namespace TP1_Labo_2
             }
             else
             {
-                proveedor = BuscarProveedor(producto);
+                Proveedor proveedor = BuscarProveedorPorProducto(producto);
 
                 proveedor.Vender(nombre, tag, cantidadCompra);
 
@@ -95,6 +77,20 @@ namespace TP1_Labo_2
             }
         }
 
+        private Proveedor EncontrarProveedor(string nombre, int cuil)
+        {
+            Proveedor proveedorEncontrado = new Proveedor();
+
+            foreach (Proveedor p in this.listaProveedoresForm)
+            {
+                if(p.Nombre == nombre && p.Cuil == cuil)
+                {
+                    proveedorEncontrado = p;
+                }
+            }
+            return proveedorEncontrado;
+        }
+
         private bool ProductosIguales(Producto p1)
         {
             bool retorno = false;
@@ -109,11 +105,11 @@ namespace TP1_Labo_2
             return retorno;
         }
 
-        private Proveedor BuscarProveedor(Producto p)
+        private Proveedor BuscarProveedorPorProducto(Producto p)
         {
             Proveedor proveedorEncontrado = new Proveedor();
 
-            foreach(Proveedor proveedor in this.listaProveedores)
+            foreach(Proveedor proveedor in this.listaProveedoresForm)
             {
                 foreach(Producto producto in proveedor.ListaProductos)
                 {
@@ -124,42 +120,6 @@ namespace TP1_Labo_2
                 }
             }
             return proveedorEncontrado;
-        }
-
-        private List<Producto> Listap1()
-        {
-            List<Producto> listaDefa = new List<Producto>();
-
-            Producto p1 = new Producto("Computadora Escritorio", "Computadora Gamer", 170000, 20);
-            Producto p2 = new Producto("Notebook", "HP 24'", 58000, 120);
-            Producto p3 = new Producto("Monitor", "Samsung 28'", 62000, 90);
-            Producto p4 = new Producto("Perifericos", "Mouse Logitech", 3000, 100);
-            Producto p5 = new Producto("Silla", "Gamer", 88000, 160);
-            Producto p6 = new Producto("Otros", "Pasta Termica", 800, 700);
-            listaDefa.Add(p1);
-            listaDefa.Add(p2);
-            listaDefa.Add(p3);
-            listaDefa.Add(p4);
-            listaDefa.Add(p5);
-            listaDefa.Add(p6);
-
-            return listaDefa;
-        }
-
-        private List<Producto> Listap2()
-        {
-            List<Producto> listaDefa = new List<Producto>();
-
-            Producto p1 = new Producto("Notebook", "Razer Ultra", 248000, 30);
-            Producto p2 = new Producto("Monitor", "Zowie 240hz", 262000, 80);
-            Producto p3 = new Producto("Perifericos", "Mouse Normal", 3000, 600);
-            Producto p4 = new Producto("Otros", "Cable USB", 1700, 1000);
-            listaDefa.Add(p1);
-            listaDefa.Add(p2);
-            listaDefa.Add(p3);
-            listaDefa.Add(p4);
-
-            return listaDefa;
         }
     }
 }

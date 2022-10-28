@@ -13,7 +13,7 @@ namespace TP1_Labo_2
 {
     public partial class FrmAdministracionDeInventario : Form
     {
-        private Dueño dueñoForm = new Dueño();
+        private Dueño dueñoForm;
 
         public FrmAdministracionDeInventario(Dueño dueño)
         {

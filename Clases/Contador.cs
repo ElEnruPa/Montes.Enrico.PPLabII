@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    public class Cliente : Usuario
+    public class Contador : Usuario
     {
-        public Cliente() : base()
-        {
-        }
 
-        public Cliente(string email, string contraseña, List<Producto> listaProductos) : base(email, contraseña, listaProductos)
+        public Contador(string email, string contraseña, List<Producto> listaProductos) : base(email, contraseña, listaProductos)
         {
         }
 

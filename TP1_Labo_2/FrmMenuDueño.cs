@@ -13,16 +13,18 @@ namespace TP1_Labo_2
 {
     public partial class FrmMenuDueño : Form
     {
-        private Dueño dueñoForm = new Dueño();
-        private Vendedor vendedorForm = new Vendedor();
-        private Cliente clienteForm = new Cliente();
+        private Dueño dueñoForm;
+        private Vendedor vendedorForm;
+        private Contador contadorForm;
+        private List<Proveedor> listaProveedoresForm;
 
-        public FrmMenuDueño(Dueño dueño, Vendedor vendedor, Cliente clienteForm)
+        public FrmMenuDueño(Dueño dueño, Vendedor vendedor, Contador contador, List<Proveedor> listaProveedores)
         {
             InitializeComponent();
             this.dueñoForm = dueño;
             this.vendedorForm = vendedor;
-            this.clienteForm = clienteForm;
+            this.contadorForm = contador;
+            this.listaProveedoresForm = listaProveedores;
         }
 
         private void btnAdministradorInventario_Click(object sender, EventArgs e)
@@ -33,13 +35,13 @@ namespace TP1_Labo_2
 
         private void btnAdministracionVenta_Click(object sender, EventArgs e)
         {
-            FrmAdministracionDeVentas frmAdministracionDeVenta = new FrmAdministracionDeVentas(vendedorForm, clienteForm);
+            FrmAdministracionDeVentas frmAdministracionDeVenta = new FrmAdministracionDeVentas(vendedorForm, contadorForm);
             frmAdministracionDeVenta.ShowDialog();
         }
 
         private void btnComprarProductos_Click(object sender, EventArgs e)
         {
-            FrmCatalogoProveedor frmCatalogoProveedor = new FrmCatalogoProveedor(dueñoForm);
+            FrmCatalogoProveedor frmCatalogoProveedor = new FrmCatalogoProveedor(dueñoForm, listaProveedoresForm);
             frmCatalogoProveedor.ShowDialog();
         }
     }

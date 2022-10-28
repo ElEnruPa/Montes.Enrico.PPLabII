@@ -13,14 +13,14 @@ namespace TP1_Labo_2
 {
     public partial class FrmAdministracionDeVentas : Form
     {
-        private Vendedor vendedorForm = new Vendedor();
-        private Cliente clienteForm = new Cliente();
+        private Vendedor vendedorForm;
+        private Contador contadorForm;
 
-        public FrmAdministracionDeVentas(Vendedor vendedor, Cliente cliente)
+        public FrmAdministracionDeVentas(Vendedor vendedor, Contador contador)
         {
             InitializeComponent();
             this.vendedorForm = vendedor;
-            this.clienteForm = cliente;
+            this.contadorForm = contador;
             dgvInventario.DataSource = null; //Limpio la lista q tenia antes
             dgvInventario.DataSource = this.vendedorForm.ListaProductos; //Agrego la lista nuevamente
         }
@@ -104,7 +104,7 @@ namespace TP1_Labo_2
 
                         dgvInventario.DataSource = null;
                         dgvInventario.DataSource = this.vendedorForm.ListaProductos;
-                        clienteForm.ListaProductos.Add(pVenta);
+                        contadorForm.ListaProductos.Add(pVenta);
 
                         string ticket = GenerarTicket(precioFinal, vuelto);
                         MessageBox.Show(ticket, "TICKET", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -178,7 +178,7 @@ namespace TP1_Labo_2
 
         private void btnVentasHechas_Click(object sender, EventArgs e)
         {
-            FrmMostradorVentas frmMostradorVentas = new FrmMostradorVentas(clienteForm);
+            FrmMostradorVentas frmMostradorVentas = new FrmMostradorVentas(contadorForm);
             frmMostradorVentas.ShowDialog();
         }
     }
